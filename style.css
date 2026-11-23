@@ -1,0 +1,161 @@
+/* Import futuristic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    background: #050510;
+    color: #e0faff;
+    overflow-x: hidden;
+    
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.12), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(157, 0, 255, 0.15), transparent 35%),
+        linear-gradient(rgba(0, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.025) 1px, transparent 1px);
+
+    background-size: auto, auto, 40px 40px, 40px 40px;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 750px;
+    padding: 55px 45px;
+    background: rgba(12, 15, 35, 0.85);
+    border: 1px solid rgba(0, 255, 255, 0.35);
+    border-radius: 18px;
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.12),
+        0 0 70px rgba(128, 0, 255, 0.08),
+        inset 0 0 25px rgba(0, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Neon Top Line */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00f5ff, #a100ff, #00f5ff);
+    box-shadow: 0 0 15px #00f5ff;
+}
+
+/* Main Heading */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 4vw, 38px);
+    color: #00f5ff;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow:
+        0 0 10px rgba(0, 245, 255, 0.8),
+        0 0 25px rgba(0, 245, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+/* Description */
+.container > p:not(.footer) {
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: center;
+    color: #b8c7e6;
+    margin-bottom: 35px;
+}
+
+/* Learning Card */
+.card {
+    padding: 28px 30px;
+    background: rgba(0, 245, 255, 0.04);
+    border: 1px solid rgba(0, 245, 255, 0.25);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00f5ff;
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.15);
+}
+
+/* Card Heading */
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #c084fc;
+    font-size: 19px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+}
+
+/* Learning List */
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 19px;
+    color: #dce7ff;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-left: 3px solid #00f5ff;
+    background: rgba(0, 245, 255, 0.035);
+    transition: all 0.3s ease;
+}
+
+li::before {
+    content: "▹";
+    color: #00f5ff;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+li:hover {
+    padding-left: 25px;
+    background: rgba(0, 245, 255, 0.1);
+    color: #00f5ff;
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #8b91b5;
+    text-transform: uppercase;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        letter-spacing: 1px;
+    }
+
+    .card {
+        padding: 22px 18px;
+    }
+
+    li {
+        font-size: 17px;
+    }
+}
